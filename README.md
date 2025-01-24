@@ -9,7 +9,7 @@ cd workspace
 ```
 ### Initializing Repo
 ```
-repo init -u https://github.com/Tequila-Extended/platform_manifest.git -b 14.0 --git-lfs
+repo init -u https://github.com/Tequila-Extended/platform_manifest.git -b uno --git-lfs
 ```
 
 ### Now sync sources
