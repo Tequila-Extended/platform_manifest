@@ -7,9 +7,6 @@
 <remote  name="ext-lab"
            fetch="https://gitlab.com/Tequila-Extended"
            revision="refs/heads/uno" />
-<remote  name="ext-cr"
-           fetch="https://github.com/Tequila-Extended"
-           revision="refs/heads/14.0" />
 
 
            <project path="vendor/qcom/opensource/core-utils-vendor" name="android_vendor_qcom_opensource_core-utils-vendor" remote="ext" />
@@ -36,7 +33,7 @@
            </project>
            <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="ext" groups="pdk-fs" />
            <project path="packages/apps/Launcher3" name="platform_packages_apps_Launcher3" remote="ext" groups="pdk-fs" />
-           <project path="packages/apps/crDroidSettings" name="crdroidandroid/android_packages_apps_crDroidSettings" remote="ext-cr" />
+           <project path="packages/apps/crDroidSettings" name="crdroidandroid/android_packages_apps_crDroidSettings" remote="ext" />
 
 
 </manifest>
