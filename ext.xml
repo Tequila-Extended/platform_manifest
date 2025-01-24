@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+<remote  name="ext"
+           fetch="https://github.com/Tequila-Extended"
+           revision="refs/heads/uno" />
+<remote  name="ext-lab"
+           fetch="https://gitlab.com/Tequila-Extended"
+           revision="refs/heads/uno" />
+
+
+           <project path="vendor/qcom/opensource/core-utils-vendor" name="android_vendor_qcom_opensource_core-utils-vendor" remote="ext" />
+           <project path="vendor/qcom/opensource/libfmjni" name="android_vendor_qcom_opensource_libfmjni" groups="qcom" remote="ext" />
+           <project path="hardware/qcom-caf/wlan" name="android_hardware_qcom_wlan" groups="qcom,waipio-vendor" remote="ext" revision="lineage-21.0-caf" />
+             <!-- hardware -->
+           <project path="hardware/qcom-caf/common" name="android_hardware_qcom-caf_common" groups="qcom" remote="ext" />
+             <!-- vendor -->
+           <project path="vendor/gms" name="vendor_google_gms" remote="ext-lab" />
+           <project path="vendor/tequila" name="platform_vendor_tequila" remote="ext" />
+           <!--frameworks -->
+           <project path="frameworks/base" name="platform_frameworks_base" remote="ext" groups="pdk-cw-fs,pdk-fs" />
+             <project path="build/make" name="platform_build" remote="ext" groups="pdk" >
+                <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+                <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+                <linkfile src="core" dest="build/core" />
+                <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+                <linkfile src="target" dest="build/target" />
+                <linkfile src="tools" dest="build/tools" />
+           </project>
+           <project path="build/soong" name="platform_build_soong" remote="ext" groups="pdk,tradefed" >
+                <linkfile src="root.bp" dest="Android.bp" />
+                <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+           </project>
+           <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="ext" groups="pdk-fs" />
+           <project path="packages/apps/Launcher3" name="platform_packages_apps_Launcher3" remote="ext" groups="pdk-fs" />
+           <project path="packages/apps/crDroidSettings" name="crdroidandroid/android_packages_apps_crDroidSettings" remote="ext" />
+
+
+</manifest>
+
+
+
+
+
+
+
+

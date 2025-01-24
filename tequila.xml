@@ -16,8 +16,6 @@
   <project path="external/dwarves" name="platform/external/dwarves" remote="aosp" revision="3c8f7e8b2cf7ff902b71c42d00fda30f30114b07" />
   <project path="external/tinyxml" name="platform/external/tinyxml" groups="pdk" remote="aosp" revision="refs/tags/android-11.0.0_r46" />
 
-  <!-- hardware -->
-  <project path="hardware/qcom-caf/common" name="platform_hardware_qcom-caf_common" groups="qcom" remote="tequila" >
     <!-- add guard for AOSP hardware/qcom dir -->
     <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
     <!-- add guards for CAF repositories -->
@@ -57,11 +55,8 @@
   <project path="packages/apps/Updater" name="platform_packages_apps_Updater" remote="tequila" />
   <project path="packages/resources/devicesettings" name="platform_packages_resources_devicesettings" remote="tequila" />
 
-  <!-- vendor -->
-  <project path="vendor/google/gms" name="platform_vendor_google_gms" remote="tequila-gitlab" />
   <project path="vendor/google/pixel" name="platform_vendor_google_pixel" remote="tequila-gitlab" />
   <project path="vendor/support" name="platform_vendor_support" remote="tequila" />
-  <project path="vendor/tequila" name="platform_vendor_tequila" remote="tequila" />
 
   <!-- vendor/qcom -->
   <project path="vendor/qcom/opensource/data-ipa-cfg-mgr" name="platform_vendor_qcom_opensource_data-ipa-cfg-mgr" groups="qcom,waipio-vendor" remote="tequila" />
