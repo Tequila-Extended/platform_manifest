@@ -1,68 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+    <!-- Remote Repositories -->
+    <remote name="ext" fetch="https://github.com/Tequila-Extended" />
+    <remote name="ext-lab" fetch="https://gitlab.com/Tequila-Extended" />
 
-<remote  name="ext"
-           fetch="https://github.com/Tequila-Extended" />
-<remote  name="ext-lab"
-           fetch="https://gitlab.com/Tequila-Extended" />
+    <!-- Vendor -->
+    <project path="vendor/qcom/opensource/core-utils-vendor" name="android_vendor_qcom_opensource_core-utils-vendor" remote="ext" revision="refs/heads/uno" />
+    <project path="vendor/qcom/opensource/libfmjni" name="android_vendor_qcom_opensource_libfmjni" remote="ext" revision="refs/heads/uno" />
+    <project path="hardware/qcom-caf/wlan" name="android_hardware_qcom_wlan" remote="ext" revision="lineage-21.0-caf" />
+    <project path="vendor/gms" name="vendor_google_gms" remote="ext-lab" revision="refs/heads/uno" />
+    <project path="vendor/tequila" name="platform_vendor_tequila" remote="ext" revision="refs/heads/uno" />
 
+    <!-- Hardware -->
+    <project path="hardware/qcom-caf/common" name="android_hardware_qcom-caf_common" remote="ext" revision="refs/heads/uno">
+        <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
+        <linkfile src="os_pickup_sepolicy_vndr.mk" dest="device/qcom/sepolicy_vndr/SEPolicy.mk" />
+        <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
+        <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8998/Android.mk" />
+        <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm660/Android.bp" />
+        <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm660/Android.mk" />
+        <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
+        <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm845/Android.mk" />
+        <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
+        <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8150/Android.mk" />
+        <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8250/Android.bp" />
+        <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8250/Android.mk" />
+        <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8350/Android.bp" />
+        <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8350/Android.mk" />
+        <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8450/audio/Android.mk" />
+        <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8450/Android.bp" />
+        <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8450/Android.mk" />
+        <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8550/audio/Android.mk" />
+        <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8550/Android.bp" />
+        <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8550/Android.mk" />
+    </project>
 
-           <project path="vendor/qcom/opensource/core-utils-vendor" name="android_vendor_qcom_opensource_core-utils-vendor" remote="ext" />
-           <project path="vendor/qcom/opensource/libfmjni" name="android_vendor_qcom_opensource_libfmjni" groups="qcom" remote="ext" />
-           <project path="hardware/qcom-caf/wlan" name="android_hardware_qcom_wlan" groups="qcom,waipio-vendor" remote="ext" revision="lineage-21.0-caf" />
-             <!-- hardware -->
-           <project path="hardware/qcom-caf/common" name="android_hardware_qcom-caf_common" groups="qcom" remote="ext" >
-                <!-- add guard for AOSP hardware/qcom dir -->
-                <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
-                <!-- add guards for CAF repositories -->
-                <linkfile src="os_pickup_sepolicy_vndr.mk" dest="device/qcom/sepolicy_vndr/SEPolicy.mk" />
-                <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
-                <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8998/Android.mk" />
-                <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm660/Android.bp" />
-                <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm660/Android.mk" />
-                <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
-                <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm845/Android.mk" />
-                <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
-                <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8150/Android.mk" />
-                <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8250/Android.bp" />
-                <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8250/Android.mk" />
-                <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8350/Android.bp" />
-                <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8350/Android.mk" />
-                <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8450/audio/Android.mk" />
-                <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8450/Android.bp" />
-                <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8450/Android.mk" />
-                <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8550/audio/Android.mk" />
-                <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8550/Android.bp" />
-                <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8550/Android.mk" />
-           </project>
-             <!-- vendor -->
-           <project path="vendor/gms" name="vendor_google_gms" remote="ext-lab" />
-           <project path="vendor/tequila" name="platform_vendor_tequila" remote="ext" />
-           <!--frameworks -->
-           <project path="frameworks/base" name="platform_frameworks_base" remote="ext" groups="pdk-cw-fs,pdk-fs" />
-             <project path="build/make" name="platform_build" remote="ext" groups="pdk" >
-                <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
-                <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
-                <linkfile src="core" dest="build/core" />
-                <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
-                <linkfile src="target" dest="build/target" />
-                <linkfile src="tools" dest="build/tools" />
-           </project>
-           <project path="build/soong" name="platform_build_soong" remote="tequila" groups="pdk,tradefed" >
-                <linkfile src="root.bp" dest="Android.bp" />
-                <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
-           </project>
-           <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="ext" groups="pdk-fs" />
-           <project path="packages/apps/Launcher3" name="platform_packages_apps_Launcher3" remote="ext" groups="pdk-fs" />
-           <project path="packages/apps/crDroidSettings" name="crdroidandroid/android_packages_apps_crDroidSettings" remote="ext" />
+    <!-- Frameworks -->
+    <project path="frameworks/base" name="platform_frameworks_base" remote="ext" revision="refs/heads/uno" groups="pdk-cw-fs,pdk-fs" />
+    <project path="build/make" name="platform_build" remote="ext" revision="refs/heads/uno" groups="pdk">
+        <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+        <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+        <linkfile src="core" dest="build/core" />
+        <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+        <linkfile src="target" dest="build/target" />
+        <linkfile src="tools" dest="build/tools" />
+    </project>
+    <project path="build/soong" name="platform_build_soong" remote="tequila" revision="refs/heads/uno" groups="pdk,tradefed">
+        <linkfile src="root.bp" dest="Android.bp" />
+        <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+    </project>
 
+    <!-- Apps -->
+    <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="ext" revision="refs/heads/uno" groups="pdk-fs" />
+    <project path="packages/apps/Launcher3" name="platform_packages_apps_Launcher3" remote="ext" revision="refs/heads/uno" groups="pdk-fs" />
+    <project path="packages/apps/crDroidSettings" name="crdroidandroid/android_packages_apps_crDroidSettings" remote="ext" revision="refs/heads/uno" />
 
 </manifest>
-
-
-
-
-
-
-
-
