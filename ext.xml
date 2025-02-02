@@ -2,11 +2,9 @@
 <manifest>
 
 <remote  name="ext"
-           fetch="https://github.com/Tequila-Extended"
-           revision="refs/heads/uno" />
+           fetch="https://github.com/Tequila-Extended" />
 <remote  name="ext-lab"
-           fetch="https://gitlab.com/Tequila-Extended"
-           revision="refs/heads/uno" />
+           fetch="https://gitlab.com/Tequila-Extended" />
 
 
            <project path="vendor/qcom/opensource/core-utils-vendor" name="android_vendor_qcom_opensource_core-utils-vendor" remote="ext" />
